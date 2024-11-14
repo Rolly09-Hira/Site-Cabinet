@@ -20,10 +20,14 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'datedebut' => 'required|date',
             'profile' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'contact' => 'required',
-            'datefin' => 'required|date',
+            'formation' => 'required',
+            'datefin' => 'required|date|after:datedebut|after:today',
             'password' => 'required|confirmed|min:5',
             'password_confirmation' => 'required',
+            'contact' => ['required','regex:/^(032|033|034|038)[0-9]{7}$/'],],[
+                'datefin.after'=>['La date de fin de formation invalide'],
+                'contact.required' => ['Numero valide'],
+                'contact.regex' => ['Veillez entrer un numero correct commencent par 032, 033, 034,038 '],
         ]);
         if($validator->passes()){
             if ($request->hasFile('profile')) {
@@ -38,6 +42,7 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->phonenumber = $request->contact;
+            $user->id_matiere = $request->formation;
             $user->date_debut = $request->datedebut;
             $user->date_fin = $request->datefin;
             $user->password = Hash::make($request->password);

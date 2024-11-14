@@ -5,7 +5,6 @@
       <title>{{config('app.name')}} - @yield('title') </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-      @vite('resources/js/app.js')
     </head>
    <body class="bg-light">
         <nav class="navbar navbar-expand-md bg-white shadow-lg bsb-navbar bsb-navbar-hover bsb-navbar-caret">
@@ -22,6 +21,7 @@
                          <b>{{ Auth::User()->name}}</b>
                     </div>
                 </div>
+
 
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -53,6 +53,9 @@
            <div class="card border-0 shadow my-5">
                 <div class="card-header bg-light">
                     <h3 class="h5 pt-2">Dashboard</h3>
+                    <div class="suivi">
+                        <h3>Formation en: <b>{{ Auth::User()->id_matiere }}</b></h3>
+                    </div>
                 </div>
                 <div class="card-body">
                     @yield('usercontente')

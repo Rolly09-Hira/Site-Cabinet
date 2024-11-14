@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('date_fin')->nullable();
             $table->enum('role',['etudiant','admin'])->default('etudiant');
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('id');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

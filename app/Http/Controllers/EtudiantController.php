@@ -21,12 +21,14 @@ class EtudiantController extends Controller
             'adresse' => 'required|string',
             'email' => 'required|email|unique:etudiants',
             'categorie'=>'required|string',
-            'contact' => 'required|string',
             'fb' => 'required|string',
             'age' => 'required|string',
             'option' =>'required|string',
             'Module' =>'required|string',
             'Niveau' =>'required|string',
+            'contact' => ['required','regex:/^(032|033|034|038)[0-9]{7}$/'],],[
+                'contact.required' => ['Numero valide'],
+                'contact.regex' => ['Veillez entrer un numero correct commencent par 032, 033, 034,038 '],
 
 
 

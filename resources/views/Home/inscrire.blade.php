@@ -71,7 +71,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="Age" class="form-label">Age</label>
-                    <input type="text" name="age" class="form-control" id="Age" placeholder="Votre age">
+                    <input type="text" value="{{ old('age') }}" name="age" class="form-control" id="Age" placeholder="Votre age">
                     @error('age')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EtudiantController;
@@ -11,8 +12,11 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\servextController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 
@@ -74,14 +78,27 @@ Route::group(['prefix' => 'admin'],function(){
         Route::post('Form-modification',[EtudiantController::class, 'EditEtudiant'])->name('Modifier-etudiant');
         Route::get('Modifier_etudiant/{id}',[EtudiantController::class, 'formmodifier'])->name('Modifier-etudiant-form');
         Route::post('process-register',[UserController::class, 'processregistre'])->name('account.processRegistre');
-        Route::post('proces_ajoutformation',[FormationController::class, 'processajoutformation'])->name('formation.ajoutproces');
-        Route::get('Ajout-formation',[FormationController::class, 'ajoutformation'])->name('formation.ajout');
-        Route::get('Listeformation',[FormationController::class, 'listFormation'])->name('admin.listeformation');
-        Route::get('deleteformation/{id}',[FormationController::class, 'deleteFormation'])->name('process_deleteformation');
         Route::get('client/Externalisation',[ExternalisationController::class, 'listExternalisation'])->name('admin.listeExternalisation');
         Route::get('client/{id}',[ExternalisationController::class, 'Externalisation'])->name('admin.PageExternalisation');
         Route::get('/chart', [ChartController::class, 'index']);
         //Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
+        Route::get('userEdit/{id}',[CrudController::class, 'edituser'])->name('admin.userEdit');
+        Route::post('userEditprocess',[CrudController::class, 'updateUser'])->name('admin.userEditprocess');
+
+
+        //formation
+        Route::post('proces_ajoutformation',[FormationController::class, 'processajoutformation'])->name('formation.ajoutproces');
+        Route::get('Ajout-formation',[FormationController::class, 'ajoutformation'])->name('formation.ajout');
+        Route::get('Listeformation',[FormationController::class, 'listFormation'])->name('admin.listeformation');
+        Route::get('deleteformation/{id}',[FormationController::class, 'deleteFormation'])->name('process_deleteformation');
+        //matiere
+        Route::post('proces_ajoutMatiere',[FormationController::class, 'processajoutmat'])->name('matiere.ajoutproces');
+        Route::get('Ajout-matiere',[FormationController::class, 'ajoutMatiere'])->name('matiere.ajout');
+        Route::get('ListeMatiere',[FormationController::class, 'listMatiere'])->name('admin.listematiere');
+        Route::get('deletematiere/{id}',[FormationController::class, 'deleteMatiere'])->name('process_deletematiere');
+        //gestion de service d'externalisation
+        Route::get('gestionservice',[servextController::class, 'gestionservext'])->name('gestionserv');
+        Route::post('ajoutduservice',[servextController::class, 'ajoutservext'])->name('ajoutservice');
     });
 });
 

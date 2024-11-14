@@ -36,6 +36,15 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" value="{{ $user->id_matiere }}" class="form-control @error('idmatiere') is invalid @enderror" name="idmatiere" id="idmatiere" placeholder="name@example.com" >
+                                                <label for="idmatiere" class="form-label">Etudiant en :</label>
+                                                @error('idmatiere')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
                                         <div class="col-12 date">
                                             <div class="form-floating mb-3">
                                                 <input type="date" value="{{ $user->date_debut }}" class="form-control @error('datedebut') is invalid @enderror" name="datedebut" id="datedebut" placeholder="Date de debut" >

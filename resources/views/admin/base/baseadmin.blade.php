@@ -28,14 +28,19 @@
                         <div class="btnsurf">
                             <a href="{{ route('admin.liste') }}"><i class="fa-solid fa-user-pen" style="margin-right: 10px;"></i> Liste des Etudiants en formation/Stage</a>
                         </div>
-                        {{--
                         <div class="btnsurf">
                             <a href="{{ route('admin.listeformation') }}"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i>Gestion d'information</a>
                         </div>
-                            --}}
+                        <div class="btnsurf">
+                            <a href="{{ route('admin.listematiere') }}"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i>Gestion des Matiere</a>
+                        </div>
+                        <div class="btnsurf">
+                            <a href="{{ route('gestionserv') }}"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i>Gestion des service</a>
+                        </div>
+
                     </div>
                     <div class="adminlogout">
-                    <a href="{{ route('admin.logout') }}"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i> Se deconnecter</a>
+                       <a href="{{ route('admin.logout') }}"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px;"></i> Se deconnecter</a>
                     </div>
                 </div>
             </div>

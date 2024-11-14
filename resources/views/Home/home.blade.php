@@ -4,9 +4,10 @@
 
 @section('content')
 <div class="home">
-    <h1>Bienvenue!</h1>
+    <h1>Près de vous à tout moment!</h1>
     <img class="lg" src="icon/2D.png" alt="logo" >
     <h1><b class="cab">CAB<span>INET</span> EX<span>CELLENT</span></b></h1>
+    <!--
     <div class="objectif">
         <form class="object">
             <h3>Notre objectif : </h3>
@@ -19,5 +20,15 @@
             </ul>
         </form>
     </div>
+    -->
+</div>
+<div class="servext">
+    <div class="tit">
+        <h3>Service d'externalisation</h3>
+    </div>
+
+</div>
+<div class="etuformation">
+
 </div>
 @endsection

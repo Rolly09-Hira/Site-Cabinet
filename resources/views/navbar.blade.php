@@ -14,8 +14,8 @@
                 <a class="dropext" href="{{ route('service.bachelier') }}">formation</a>
               </div>
           </div>
-          {{--  <a class="logn" href="{{ Route('account.login') }}">Se connecter</a>
-          <a class="logn" href="{{ Route('Etudiant.inscrire') }}">S'inscrire</a>--}}
+           <a class="logn" href="{{ Route('account.login') }}">Se connecter</a>
+
           <a class="logn" href="{{ Route('admin.login') }}">Passer en Admin</a>
       </div>
     </div>
@@ -34,17 +34,15 @@
             </div>
         </div>
         <div class="login">
-           {{--   <a class="logn @if (Request::route()->getName()=='account.login') bg-success text-white @endif " href="{{ Route('account.login') }}"><i class="fa-solid fa-user-alt"></i> Se connecter</a>
+            <a class="logn @if (Request::route()->getName()=='account.login') bg-success text-white @endif " href="{{ Route('account.login') }}"><i class="fa-solid fa-user-alt"></i> Se connecter</a>
             <p class="ou"> ou </p>
-            <a class="logn @if (Request::route()->getName()=='Etudiant.inscrire') bg-success text-white @endif" href="{{ Route('Etudiant.inscrire') }}"><i class="fa-solid fa-user-plus"></i> S'inscrire</a>
-            <p class="ou"> ou </p>--}}
             <a class="logn @if (Request::route()->getName()=='admin.login') bg-success text-white @endif" href="{{ Route('admin.login') }}"><i class="fa-solid fa-user-tie"></i> passer en Admin</a>
         </div>
         <div class="dropdown1">
             <i class="fa-solid fa-list"></i>
             <div class="dropdown1-content">
-              {{--    <a class="logn" href="{{ Route('account.login') }}">Se connecter</a>
-                <a class="logn" href="{{ Route('Etudiant.inscrire') }}">S'inscrire</a>--}}
+                <a class="logn" href="{{ Route('account.login') }}">Se connecter</a>
+
                 <a class="logn" href="{{ Route('admin.login') }}">Passer en admin</a>
             </div>
         </div>

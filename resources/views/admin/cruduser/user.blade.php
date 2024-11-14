@@ -18,38 +18,46 @@
                     @if (Session::has('fail'))
                             <span class="alert alert-danger p-2">{{Session::get('fail')}}</span>
                     @endif
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Chercher</span>
+                        <input type="text" class="form-control" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher..."  >
+                    </div>
                     <div class="card-body table-container">
-                        <table class="table table-sm table-striped table-bordered max-width:100%;">
+
+                        <table class="table table-sm table-striped table-bordered max-width:100%;" id="myTable">
                             <thead>
-                                <th class="thus">S/N</th>
-                                <th class="thus">Profile</th>
-                                <th class="thus">Nom</th>
-                                <th class="thus">Mail</th>
-                                <th class="thus">Numero</th>
-                                <th class="thus">Debut information/Stage</th>
-                                <th class="thus">Fin information/Stage</th>
-                                <th class="thus">Role</th>
-                                <th class="thus">Date d'enregistrement</th>
-                                <th class="thus">derniere modification</th>
-                                <th  class="thus" colspan="3">Action</th>
+                               <tr>
+                                   <th class="thus">S/N</th>
+                                   <th class="thus">Nom</th>
+                                   <th class="thus">Mail</th>
+                                   <th class="thus">Numero</th>
+                                   <th class="thus">Debut information/Stage</th>
+                                   <th class="thus">Fin information/Stage</th>
+                                   <th class="thus">Role</th>
+                                   <th class="thus">Profile</th>
+                                    <th class="thus">Date d'enregistrement</th>
+                                    <th class="thus">derniere modification</th>
+                                    <th  class="thus" colspan="3">Action</th>
+                                </tr>
+
                             </thead>
                             <tbody>
                                 @if (count($all_users)>0)
                                     @foreach ( $all_users as $item )
                                         <tr>
                                             <td class="thus">{{$loop->iteration}}</td>
-                                            <td class="thus">{{$item->profile}}</td>
                                             <td class="thus">{{$item->name}}</td>
                                             <td class="thus">{{$item->email}}</td>
                                             <td class="thus">{{$item->phonenumber}}</td>
                                             <td class="thus">{{$item->date_debut}}</td>
                                             <td class="thus">{{$item->date_fin}}</td>
                                             <td class="thus">{{$item->role}}</td>
+                                            <td class="thus">{{$item->profile}}</td>
                                             <td class="thus">{{$item->created_at}}</td>
                                             <td class="thus">{{$item->updated_at}}</td>
-                                            <td class="thus"><a href="{{-- /edit/$item->id--}}" class="btn btn-primary btn-sm">Edit</a></td>
-                                            <td class="thus"><a href="deleteuser/{{$item->id}}" class="btn btn-danger btn-sm">Delete</a></td>
-                                            <td class="thus"><a href="affichage/{{$item->id}}" class="btn btn-success btn-sm">aficher</a></td>
+                                            <td class="thus"><a href="userEdit/{{$item->id}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i></a></td>
+                                            <td class="thus"><a href="deleteuser/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
+                                            <td class="thus"><a href="affichage/{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-clipboard"></i></a></td>
                                         </tr>
                                     @endforeach
 
