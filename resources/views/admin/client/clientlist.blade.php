@@ -17,28 +17,34 @@
                     @if (Session::has('fail'))
                             <span class="alert alert-danger p-2">{{Session::get('fail')}}</span>
                     @endif
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Chercher</span>
+                        <input type="text" class="form-control" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher..."  >
+                    </div>
                     <div class="card-body table-container">
-                        <table class="table table-sm table-striped table-bordered max-width:100%;">
+                        <table class="table table-sm table-striped table-bordered max-width:100%;" id="mytable">
                             <thead>
-                                <th class="thus">S/N</th>
-                                <th class="thus">Commercial</th>
-                                <th class="thus">Entreprise</th>
-                                <th class="thus">Client</th>
-                                <th class="thus">Activités</th>
-                                <th class="thus">Contact</th>
-                                <th class="thus">Mail</th>
-                                <th class="thus">FAcebook</th>
-                                <th class="thus">Adresse</th>
-                                <th class="thus">Durée d'existance</th>
-                                <th class="thus">Nombre du personnel</th>
-                                <th class="thus">Chiffre d'affaire mensuel</th>
-                                <th class="thus">Regime d'imposition</th>
-                                <th class="thus">Statut juridique</th>
-                                <th class="thus">Domaine</th>
-                                <th class="thus">Service souhaiter</th>
-                                <th class="thus">Durée souhaiter</th>
-                                <th class="thus">Enregistrer le</th>
-                                <th class="thus" colspan="2">Action</th>
+                                <tr></tr>
+                                    <th class="thus">S/N</th>
+                                    <th class="thus">Commercial</th>
+                                    <th class="thus">Entreprise</th>
+                                    <th class="thus">Client</th>
+                                    <th class="thus">Activités</th>
+                                    <th class="thus">Contact</th>
+                                    <th class="thus">Mail</th>
+                                    <th class="thus">FAcebook</th>
+                                    <th class="thus">Adresse</th>
+                                    <th class="thus">Durée d'existance</th>
+                                    <th class="thus">Nombre du personnel</th>
+                                    <th class="thus">Chiffre d'affaire mensuel</th>
+                                    <th class="thus">Regime d'imposition</th>
+                                    <th class="thus">Statut juridique</th>
+                                    <th class="thus">Domaine</th>
+                                    <th class="thus">Service souhaiter</th>
+                                    <th class="thus">Durée souhaiter</th>
+                                    <th class="thus">Enregistrer le</th>
+                                    <th class="thus" colspan="2">Action</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @if (count($all_externalisation)>0)

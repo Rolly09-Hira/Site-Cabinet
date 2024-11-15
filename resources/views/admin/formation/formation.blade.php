@@ -29,32 +29,40 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col-12 date">
-                                            <div class="form-floating mb-3" style="min-width: 40%;">
-                                                <input type="text" value="{{ old('idmatiere') }}" class="form-control @error('idmatiere') is invalid @enderror" name="idmatiere" id="idmatiere" placeholder="name@example.com" >
-                                                <label for="idmatiere" class="form-label">Formation de:</label>
-                                                @error('idmatiere')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text" for="inputGroupSelect01">Formation de:</label>
+                                            <select class="form-select" name="idmatiere"  id="inputGroupSelect01" required>
+                                              <option value="" selected>Choose...</option>
+                                              <option value="Comptabilité I, II, III">Comptabilité I, II, III</option>
+                                              <option value="Developpements personnel">Developpements personnel</option>
+                                              <option value="Assistant(e) marketing">Assistant(e) marketing</option>
+                                              <option value="Contrôleur de gestion">Contrôleur de gestion</option>
+                                              <option value="Magasinier">Magasinier</option>
+                                              <option value="Fiscalité I, II, III">Fiscalité I, II, III</option>
+                                              <option value="Assistant(e) polyvalent(e)">Assistant(e) polyvalent(e)</option>
+                                              <option value="Agent commercial">Agent commercial</option>
+                                              <option value="Audit Junior ou Sénior">Audit Junior ou Sénior</option>
+                                              <option value="Assistant(e) direction">Assistant(e) direction</option>
+                                              <option value="Assistant(e) Juridique">Assistant(e) Juridique</option>
+                                              <option value="Assistant(e) RH">Assistant(e) RH</option>
+                                            </select>
+                                            @error('idmatiere')
+                                               <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
-                                       {{--  <div class="col-12 date">
-                                            <div class="form-floating mb-3" style="min-width: 40%;">
-                                                <input type="file" id="video" class="form-control" name="video" accept="video/*" required >
-                                                <label for="video" class="form-label">video</label>
-                                                @error('video')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>--}}
-                                        <div class="col-12 date">
-                                            <div class="form-floating mb-3">
-                                                <input type="file" id="pdf" class="form-control" name="pdf" accept="application/*" >
-                                                <label for="pdf" class="form-label">Support fichier</label>
-                                                @error('pdf')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
+                                        <div class="col-12">
+                                            <label for="video" class="form-label">video</label>
+                                            <input type="file" id="video" class="form-control" name="video" accept="video/*" required >
+                                            @error('video')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="formFile" class="form-label">Support pdf</label>
+                                            <input class="form-control" type="file" name="pdf" id="formFile" accept="application/*">
+                                            @error('pdf')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">

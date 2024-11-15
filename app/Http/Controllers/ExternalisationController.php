@@ -17,7 +17,6 @@ class ExternalisationController extends Controller
             'client' => 'required|string',
             'activite'=>'required|string',
             'mail' => 'required|string|email',
-            'contact' => 'required|string',
             'fb' => 'required|string',
             'adresse' => 'required|string',
             'existance' =>'required|string',
@@ -28,9 +27,9 @@ class ExternalisationController extends Controller
             'domaine' =>'required|string',
             'service' =>'required|string',
             'delai' =>'required|string',
-
-
-
+            'contact' => ['required','regex:/^(032|033|034|038)[0-9]{7}$/'],],[
+                'contact.required' => ['Numero valide'],
+                'contact.regex' => ['Veillez entrer un numero correct commencent par 032, 033, 034,038 '],
         ]);
         try{
 
@@ -71,3 +70,4 @@ class ExternalisationController extends Controller
         return view('admin.client.pageclient',compact('externalisation'));
     }
 }
+

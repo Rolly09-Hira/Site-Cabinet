@@ -17,23 +17,29 @@
                     @if (Session::has('fail'))
                             <span class="alert alert-danger p-2">{{Session::get('fail')}}</span>
                     @endif
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Chercher</span>
+                        <input type="text" class="form-control" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher..."  >
+                    </div>
                     <div class="card-body table-container">
-                        <table class="table table-sm table-striped table-bordered">
+                        <table class="table table-sm table-striped table-bordered" id="myTable">
                             <thead>
-                                <th class="thus">S/N</th>
-                                <th class="thus">Nom</th>
-                                <th class="thus">Mail</th>
-                                <th class="thus">Adresse</th>
-                                <th class="thus">Numero</th>
-                                <th class="thus">Categorie</th>
-                                <th class="thus">Age</th>
-                                <th class="thus">Facebook</th>
-                                <th class="thus">Option</th>
-                                <th class="thus">Module</th>
-                                <th class="thus">Niveau</th>
-                                <th class="thus">Image</th>
-                                <th class="thus">Date d'enregistrement</th>
-                                <th  class="thus" colspan="2">Action</th>
+                                <tr>
+                                    <th class="thus">S/N</th>
+                                    <th class="thus">Nom</th>
+                                    <th class="thus">Mail</th>
+                                    <th class="thus">Adresse</th>
+                                    <th class="thus">Numero</th>
+                                    <th class="thus">Categorie</th>
+                                    <th class="thus">Age</th>
+                                    <th class="thus">Facebook</th>
+                                    <th class="thus">Option</th>
+                                    <th class="thus">Module</th>
+                                    <th class="thus">Niveau</th>
+                                    <th class="thus">Image</th>
+                                    <th class="thus">Date d'enregistrement</th>
+                                    <th  class="thus" colspan="2">Action</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @if (count($all_etudiants)>0)
