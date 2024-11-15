@@ -188,6 +188,7 @@
                 <div class="footttr">
                     <h5 class="divttr"><i class="fas fa-phone-volume"></i> Contact</h5>
                </div>
+<<<<<<< HEAD
                <ul>
                     <li class="li"><i class="fas fa-mail-bulk"></i><b> Cabinet.nakay@gmail.com</b></li>
                     <li class="li"><i class="fab fa-facebook"></i><b> Cabinet Nakay ofisialy</b></li>
@@ -198,6 +199,14 @@
                 <li><i class="fab fa-facebook"></i>Facebook : Cabinet Nakay ofisialy / Cabinet Nakay formation et stage </li>
                 <li><i class="fas fa-phone-square"></i>Télephone : 034 44 400 22 </li>
                 <li><i class="fas fa-phone-square"></i>Adresse : Meteo Avaradoha pres de l'Assurance MAMA.</li> -->
+=======
+               <div class="ul">
+                <li><i class="fas fa-mail-bulk"></i>Mail : <b>Cabinet.nakay@gmail.com</b></li>
+                <li><i class="fab fa-facebook"></i>Facebook : Cabinet Nakay ofisialy / Cabinet Nakay formation et stage </li>
+                <li><i class="fas fa-phone-square"></i>Télephone : 034 44 400 22 </li>
+                <li><i class="fas fa-phone-square"></i>Adresse : Meteo Avaradoha pres de l'Assurance MAMA.</li>
+               </div>
+>>>>>>> 42fb7beadc29fbd49bcdde91e15c10bc450a5956
             </div>
             <div class="aboutapp">
                 <div class="footttr">
